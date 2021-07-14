@@ -42,7 +42,7 @@ public class SourceRowCount {
             .map(entry -> new File(entry).toString()).collect(Collectors.toList()));
 
     // More meaningful job name
-    String normalizedTableId = TABLE_ID.replace(".", "-");
+    String normalizedTableId = TABLE_ID.replace(".", "-").replace("_", "-");
     String jobName = options.getJobName().replace("sourcerow", normalizedTableId + "-row");
     options.setJobName(jobName);
 
